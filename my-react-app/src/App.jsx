@@ -4,6 +4,9 @@ import { useState } from "react"
 import "./styles.css"
 import { Header, Sidebar } from "./index.jsx"
 
+
+
+
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
 
@@ -80,4 +83,3 @@ function App() {
 }
 
 export default App
-
