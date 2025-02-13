@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --background: #000000;
+  --main-background: #0d0d0d;
+  --foreground: #ffffff;
+  --primary: #ffffff;
+  --secondary: #666666;
+  --accent: #1a1a1a;
+  --input-bg: #1a1a1a;
+  --sidebar-width: 280px;
+  --border-color: #333333;
+  --header-height: 65px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 50px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--main-background);
+  color: var(--foreground);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  background-color: var(--main-background);
+  min-height: 100vh;
+}
+
+.content {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Email Integration Styles */
+.email-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.email-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.email-description {
+  color: var(--secondary);
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.email-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.email-card {
+  background-color: var(--background);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 300px;
+}
+
+.email-icon {
+  color: var(--foreground);
+  margin-bottom: 1rem;
+  width: 24px;
+  height: 24px;
+}
+
+.email-service {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.connect-button {
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.connect-button:hover {
+  background-color: #e5e5e5;
+}
+
+@media (max-width: 1024px) {
+  .email-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .email-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
