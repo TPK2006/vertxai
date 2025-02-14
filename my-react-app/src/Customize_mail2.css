@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --background: #000000;
+  --main-background: #0d0d0d;
+  --foreground: #ffffff;
+  --primary: #ffffff;
+  --secondary: #666666;
+  --accent: #1a1a1a;
+  --input-bg: #1a1a1a;
+  --sidebar-width: 280px;
+  --border-color: #333333;
+  --header-height: 65px;
+  --gray-bg: #1e1e1e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 50px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--main-background);
+  color: var(--foreground);
+  line-height: 1.5;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  background-color: var(--main-background);
+  min-height: 100vh;
+}
+
+.content {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header {
+  max-width: 600px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: var(--secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.stats-card {
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  width: 200px;
+  height: 120px;
+  padding: 0rem, 0rem;
+  margin-left: 20rem;
+  margin-bottom: 2rem;
+
+  
+}   
+
+
+
+
+.stats-label {
+  display: inline-block;
+  font-size: 0.875rem;
+  background-color: var(--gray-bg);
+  padding: 0.375rem 1.83rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  
+}
+
+.stats-value {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  height: calc(100vh - 220px);
+}
+
+.templates-section {
+  height: 100%;
+}
+
+.template-boxes {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  height: 80%;
+}
+
+.template-box {
+  flex: 1;
+  background-color: var(--accent);
+  border-radius: 0.5rem;
+  margin: 0.5rem 0;
+  min-height: 100px;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 0.5rem 0;
+}
+
+.custom-btn {
+  background-color: var(--gray-bg);
+  color: var(--foreground);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.editor-section {
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.editor-title {
+  font-weight: 500;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  background-color: var(--accent);
+}
+
+.editor-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+}
+
+.editor-field {
+  margin-bottom: 1.5rem;
+}
+
+.subject-input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  color: var(--foreground);
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.subject-input::placeholder {
+  color: var(--secondary);
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem; /* Add padding to the toolbar */
+  background-color: black; /* Keep the black background */
+  border-radius: 0.5rem; /* Optional: Add rounded corners */
+  width: max-content; /* Ensure the toolbar only takes up the space of its content */
+}
+
+.toolbar-btn {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 0.25rem 0.5rem; /* Adjust padding if needed */
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-btn:hover {
+  background-color: var(--accent);
+}
+
+.editor-text {
+  flex: 1;
+  background-color: #0D0D0D;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.enhance-btn {
+  background-color: var(--gray-bg);
+  color: var(--secondary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.enhance-btn.active {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.editor-footer {
+  display: flex;
+  justify-content: flex-start; /* Changed from flex-end to flex-start */
+  align-items: center;
+  margin-top: auto;
+}
+.verify-btn {
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    flex-direction: column;
+  }
+
+  .stats-card {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
