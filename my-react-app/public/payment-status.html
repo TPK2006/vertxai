@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status | Cashfree</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="status-container">
+            <div id="loading" class="status-message">
+                <div class="spinner"></div>
+                <p>Checking payment status...</p>
+            </div>
+            
+            <div id="success" class="status-message success" style="display: none;">
+                <div class="status-icon">✓</div>
+                <h2>Payment Successful!</h2>
+                <p>Your transaction has been completed successfully.</p>
+                <div class="order-details">
+                    <p>Order ID: <span id="orderId"></span></p>
+                    <p>Amount: <span id="amount"></span></p>
+                </div>
+                <button class="return-button" onclick="window.location.href='/'">Return to Home</button>
+            </div>
+            
+            <div id="failure" class="status-message error" style="display: none;">
+                <div class="status-icon">✕</div>
+                <h2>Payment Failed</h2>
+                <p>Sorry, your payment could not be processed.</p>
+                <p id="errorMessage" class="error-details"></p>
+                <button class="return-button" onclick="window.location.href='/'">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('order_id');
+            
+            if (orderId) {
+                document.getElementById('orderId').textContent = orderId;
+                setTimeout(() => {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('success').style.display = 'block';
+                    document.getElementById('amount').textContent = '₹100.00';
+                }, 2000);
+            } else {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('failure').style.display = 'block';
+                document.getElementById('errorMessage').textContent = 'Invalid order ID';
+            }
+        });
+    </script>
+</body>
+</html>

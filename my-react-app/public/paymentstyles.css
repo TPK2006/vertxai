@@ -1,0 +1,133 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2d2d2d;
+}
+
+.payment-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #00b2ff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.payment-button:hover {
+  background-color: #0095d6;
+}
+
+.test-info {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.test-info h3 {
+  margin-bottom: 1rem;
+  color: #2d2d2d;
+}
+
+.test-info p {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+
+.status-container {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.status-message {
+  margin: 2rem 0;
+}
+
+.status-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.success .status-icon {
+  color: #00c853;
+}
+
+.error .status-icon {
+  color: #ff3d00;
+}
+
+.order-details {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.error-details {
+  color: #ff3d00;
+  margin: 1rem 0;
+}
+
+.return-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #00b2ff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.return-button:hover {
+  background-color: #0095d6;
+}
+
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 1rem auto;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #00b2ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,68 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashfree Payment Integration</title>
+    <link rel="stylesheet" href="/paymentstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Test Payment</h1>
+        <p>Amount: ₹100</p>
+        <button class="payment-button" onclick="initiatePayment()">Pay Now</button>
+
+        <div class="test-info">
+            <h3>Test Card Details</h3>
+            <p>Card Number: 4111 1111 1111 1111</p>
+            <p>Expiry: Any future date</p>
+            <p>CVV: Any 3 digits</p>
+            <p>Name: Any name</p>
+            <p>OTP: 123456</p>
+        </div>
+    </div>
+
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <script>
+        async function initiatePayment() {
+            try {
+                const response = await fetch('/api/create-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        amount: 100,
+                        currency: "INR",
+                        customer_details: {
+                            customer_id: "TEST_CUSTOMER_" + Date.now(),
+                            customer_name: "Test User",
+                            customer_email: "test@example.com",
+                            customer_phone: "9999999999"
+                        }
+                    })
+                });
+
+                const orderData = await response.json();
+
+                // Initialize Cashfree Drop-in
+                const cashfree = new Cashfree({
+                    mode: "sandbox" // or "production" when going live
+                });
+
+                const checkoutOptions = {
+                    paymentSessionId: orderData.payment_session_id,
+                    redirectTarget: "_self", // or "_blank" for new window
+                };
+
+                cashfree.checkout(checkoutOptions);
+
+            } catch (error) {
+                console.error("Payment initiation failed:", error);
+                alert("Payment initiation failed. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
