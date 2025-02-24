@@ -1,0 +1,101 @@
+.equity-container {
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.back-button {
+  background-color: #27272a;
+  border-radius: 9999px;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #3f3f46;
+}
+
+.back-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.main-content {
+  max-width: 48rem;
+}
+
+.main-title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.section-text {
+  color: #a1a1aa;
+  margin-bottom: 0.5rem;
+}
+
+.section-list {
+  color: #a1a1aa;
+  margin-left: 1rem;
+  list-style-type: disc;
+  margin-top: 0.5rem;
+}
+
+.table-container {
+  border: 1px solid #3f3f46;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.info-table th {
+  text-align: left;
+  padding: 1rem;
+  background-color: #18181b;
+  border-bottom: 1px solid #3f3f46;
+}
+
+.info-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #3f3f46;
+}
+
+.info-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .main-title {
+    font-size: 1.875rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .info-table td,
+  .info-table th {
+    padding: 0.75rem;
+  }
+}
