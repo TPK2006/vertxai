@@ -99,7 +99,7 @@ body {
   width: var(--sidebar-expanded-width);
 }
 
-/* Ensure the content adjusts properly based on sidebar state */
+
 @media (max-width: 1200px) {
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);
