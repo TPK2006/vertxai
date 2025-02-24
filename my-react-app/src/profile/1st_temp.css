@@ -8,15 +8,16 @@
   --secondary: #666666;
   --accent: #1a1a1a;
   --input-bg: #1a1a1a;
-  --sidebar-width: 57px;
+  --sidebar-collapsed-width: 75px;
+  --sidebar-expanded-width: 240px;
   --border-color: #333333;
-  --header-height: 40px;
+  --header-height: 60px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  padding-top: 10px;
+  box-sizing: border-box;
 }
 
 body {
@@ -32,9 +33,18 @@ body {
   min-height: 100vh;
 }
 
+.app.sidebar-expanded .main-content {
+  margin-left: var(--sidebar-expanded-width);
+  transition: margin-left 0.3s ease;
+}
+
+.app.sidebar-collapsed .main-content {
+  margin-left: var(--sidebar-collapsed-width);
+  transition: margin-left 0.3s ease;
+}
+
 .main-content {
   flex: 1;
-  margin-left: var(--sidebar-width);
   background-color: var(--main-background);
   min-height: 100vh;
   padding-top: var(--header-height);
@@ -79,6 +89,17 @@ body {
   margin: 0;
 }
 
+/* Sidebar specific overrides */
+.sidebar {
+  width: var(--sidebar-collapsed-width);
+  transition: width 0.3s ease;
+}
+
+.sidebar.expanded {
+  width: var(--sidebar-expanded-width);
+}
+
+/* Ensure the content adjusts properly based on sidebar state */
 @media (max-width: 1200px) {
   .tools-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -86,8 +107,18 @@ body {
 }
 
 @media (max-width: 768px) {
-  .main-content {
+  .app.sidebar-expanded .main-content,
+  .app.sidebar-collapsed .main-content {
     margin-left: 0;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 100;
+  }
+  
+  .sidebar.expanded {
+    transform: translateX(0);
   }
   
   .tools-grid {
