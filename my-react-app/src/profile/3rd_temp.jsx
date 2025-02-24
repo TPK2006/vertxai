@@ -4,19 +4,19 @@ import './styles.css';
 const EquityCapTable = () => {
   return (
     <div className="equity-container">
-      {/* Back Button */}
+
       <button className="back-button">
         <svg className="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
 
-      {/* Main Content */}
+
       <div className="main-content">
-        {/* Header */}
+
         <h1 className="main-title">Equity and Cap Table Management</h1>
 
-        {/* What is section */}
+
         <section className="content-section">
           <h2 className="section-title">What is equity & cap table management?</h2>
           <p className="section-text">
@@ -32,7 +32,7 @@ const EquityCapTable = () => {
           </ul>
         </section>
 
-        {/* Why Important section */}
+
         <section className="content-section">
           <h2 className="section-title">Why it is important</h2>
           <ul className="section-list">
@@ -42,7 +42,7 @@ const EquityCapTable = () => {
           </ul>
         </section>
 
-        {/* Remember Table section */}
+
         <section className="content-section">
           <h2 className="section-title">Just remember</h2>
           <div className="table-container">
