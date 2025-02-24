@@ -35,10 +35,10 @@ function App() {
   ]
 
   return (
-    <div className="app">
-      <Sidebar sidebarOpen={sidebarOpen} />
+    <div className={`app ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <main>
-        <div className="main-content">
+        <div className={`main-content ${sidebarOpen ? "expanded" : "collapsed"}`}>
           <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
           <div className="content">
             <div className="tools-grid">
